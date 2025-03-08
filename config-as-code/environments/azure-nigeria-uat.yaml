@@ -510,49 +510,48 @@ fluent-bit:
   egov-infra-log-topic: "egov-infra-logs"
 # <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
+elasticsearch-data:
+  namespace: es-cluster-v8
+  image:
+    tag: 8.11.1
+  persistence:
+    enabled: true
+    azure:
+      - diskName: "es-data-v1-0" ## add diskName
+        diskURI: "/subscriptions/e0936f01-4a73-452f-93e0-1bfdfd9b15ab/resourceGroups/MC_azure-nigeria-ng-uat_azure-nigeria-uat_southafricanorth/providers/Microsoft.Compute/disks/es-data-v1-0"## Azure diskURI
+      - diskName: "es-data-v1-1" ## add diskName
+        diskURI: "/subscriptions/e0936f01-4a73-452f-93e0-1bfdfd9b15ab/resourceGroups/MC_azure-nigeria-ng-uat_azure-nigeria-uat_southafricanorth/providers/Microsoft.Compute/disks/es-data-v2-0"## Azure diskURI
+      - diskName: "es-data-v1-2"  ## add diskName
+        diskURI: "/subscriptions/e0936f01-4a73-452f-93e0-1bfdfd9b15ab/resourceGroups/MC_azure-nigeria-ng-uat_azure-nigeria-uat_southafricanorth/providers/Microsoft.Compute/disks/es-data-v3-0"## Azure diskURI
 
-#elasticsearch-data:
-#  namespace: es-cluster-v8
-#  image:
-#    tag: 8.11.1
-#  persistence:
-#    enabled: true
-#    aws:
-#      - volumeId: "vol-075928cb74ffb2a83" ## add your respective volume id eg. vol-0085073c65f76dre5
-#        zone: ap-south-1b            ## add your respective zone eg. ap-south-1b
-#      - volumeId: "vol-0bce8b969b75199b3" ## add your respective volume id eg. vol-0085073c65f76dre5
-#        zone: ap-south-1b            ## add your respective zone eg. ap-south-1b
-#      - volumeId: "vol-078b097f573aeee51" ## add your respective volume id eg. vol-0085073c65f76dre5
-#        zone: ap-south-1b            ## add your respective zone eg. ap-south-1b
-#
-#  esJavaOpts: "-Xmx1g -Xms1g"
-#  resources:
-#    requests:
-#      memory: "2Gi"
-#    limits:
-#      memory: "2Gi"
+  esJavaOpts: "-Xmx3g -Xms3g"
+  resources:
+    requests:
+      memory: "4Gi"
+    limits:
+      memory: "4Gi"
 
-#elasticsearch-master:
-#  namespace: es-cluster-v8
-#  replicas: 3
-#  image:
-#    tag: 8.11.1
-#  persistence:
-#    enabled: true
-#    aws:
-#      - volumeId: "vol-02e7a0a3937f7ea04" ## add your respective volume id eg. vol-0085073c65f76dre5
-#        zone: ap-south-1b            ## add your respective zone eg. ap-south-1b
-#      - volumeId: "vol-0e5bcfdf36edbf511" ## add your respective volume id eg. vol-0085073c65f76dre5
-#        zone: ap-south-1b            ## add your respective zone eg. ap-south-1b
-#      - volumeId: "vol-0e687f428816b3f45" ## add your respective volume id eg. vol-0085073c65f76dre5
-#        zone: ap-south-1b            ## add your respective zone eg. ap-south-1b
-#
-#  esJavaOpts: "-Xmx448m -Xms448m"
-#  resources:
-#    requests:
-#      memory: "896Mi"
-#    limits:
-#      memory: "896Mi"
+elasticsearch-master:
+  namespace: es-cluster-v8
+  replicas: 3
+  image:
+    tag: 8.11.1
+  persistence:
+    enabled: true
+    azure:
+      - diskName: "es-master-0" ## add diskName
+        diskURI: "/subscriptions/e0936f01-4a73-452f-93e0-1bfdfd9b15ab/resourceGroups/MC_azure-nigeria-ng-uat_azure-nigeria-uat_southafricanorth/providers/Microsoft.Compute/disks/es-master-0"## Azure diskURI
+      - diskName: "es-master-1" ## add diskName
+        diskURI: "/subscriptions/e0936f01-4a73-452f-93e0-1bfdfd9b15ab/resourceGroups/MC_azure-nigeria-ng-uat_azure-nigeria-uat_southafricanorth/providers/Microsoft.Compute/disks/es-master-1"## Azure diskURI
+      - diskName: "es-master-2"  ## add diskName
+        diskURI: "/subscriptions/e0936f01-4a73-452f-93e0-1bfdfd9b15ab/resourceGroups/MC_azure-nigeria-ng-uat_azure-nigeria-uat_southafricanorth/providers/Microsoft.Compute/disks/es-master-2"## Azure diskURI
+
+  esJavaOpts: "-Xmx448m -Xms448m"
+  resources:
+    requests:
+      memory: "896Mi"
+    limits:
+      memory: "896Mi"
 
 es-curator:
   schedule: "45 18 * * *"
