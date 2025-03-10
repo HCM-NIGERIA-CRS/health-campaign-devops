@@ -102,7 +102,7 @@ module "kubernetes" {
   client_secret             = var.client_secret
   vm_size                   = "Standard_B4ms"
   ssh_public_key            = var.environment
-  node_count                = 5
+  node_count                = 7
   network_security_group_id = azurerm_network_security_group.aks_nsg.id
   subnet_id                 = azurerm_subnet.aks.id
 }
