@@ -157,4 +157,8 @@ env: |
   - name: TRACER_OPENTRACING_ENABLED
     value: "true" 
   {{- end }}
+  - name: EGOV_HRMS_MIN_MOBILE_NUMBER
+    value: "10000000000"
+  - name: EGOV_HRMS_MAX_MOBILE_NUMBER
+    value: "99999999999"
   
