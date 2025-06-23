@@ -23,7 +23,7 @@ modules:
       - egovio/egov-enc-service:v2.9.0-aad7536fde-23
       - egovio/egov-filestore:DIGIT-2.9-LTS-237578ce80-14
       - egovio/egov-localization:v2.9.0-063968adc7-23
-      - egovio/egov-idgen:v2.9.0-063968adc7-18
+      - egovio/health-idgen:ben-id-impl-561d09184a-31
       - egovio/egov-indexer:indexer-17-searchBody-1799f17903-57
       - egovio/egov-notification-mail:health-digit-master-6865af2823-2
       - egovio/egov-otp:v1.2.2-72f8a8f87b-12
