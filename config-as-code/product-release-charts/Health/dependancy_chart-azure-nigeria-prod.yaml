@@ -52,7 +52,7 @@ modules:
       - "business"
     services:
       - egovio/employee:v1.8.0-2ac8314b2f-116
-      - egovio/digit-ui:taraba-impel-d779bf0211-363
+      - egovio/digit-ui:taraba-impel-90ad966a96-372
   - name: m_dss   #dss
     dependencies:
       - "frontend"
