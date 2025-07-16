@@ -77,7 +77,7 @@ modules:
       - egovio/product:v1.1.0-00a7accbda-31
       - egovio/individual:HCMPRE-2480-Beneficiary-ID-Generation-using-Id-gen-service-26d009ab42-62
       - egovio/transformer:bauchi-transformer-fixes-d8eb080802-354
-      - egovio/stock:HDDF-2933-bauchi-stock-search-model-update-6ea483894d-63
+      - egovio/stock:HDDF-2933-bauchi-stock-search-model-update-dab9dd749d-68
       - egovio/household:dev-2fd1348b02-63
       - egovio/project:HDDF-1638-e0cc729ef6-34
       - egovio/referralmanagement:HCMPRE-2747-Identifier-changes-5b14c04064-90
