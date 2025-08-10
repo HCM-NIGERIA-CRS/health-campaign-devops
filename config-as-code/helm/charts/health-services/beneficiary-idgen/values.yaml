@@ -29,8 +29,8 @@ appType: "java-spring"
 tracing-enabled: true
 heap: "-Xmx384m -Xms384m"
 java-args: "-Dspring.profiles.active=monitoring"
-idformat-from-mdms: "false"
-autocreate-new-seq: "false"
+idformat-from-mdms: "true"
+autocreate-new-seq: "true"
 memory_limits: "1Gi"
 cpu_limits: "300m"
 egov-mdms-service-host-key: "mdms-v2"
@@ -114,13 +114,13 @@ env: |
   - name: LIMIT_ID_USER_DEVICE_PER_DAY_ENABLED
     value: 'true'
   - name: LIMIT_ID_USER_DEVICE_PER_DAY
-    value: '100'
+    value: '600'
   - name: LIMIT_ID_USER_DEVICE_TOTAL
     value: '6000'
   - name: ID_POOL_GENERATION_MAX_RECORDS_PER_PERSIST_BATCH
-    value: '1000'
+    value: '100'
   - name: ID_POOL_GENERATION_MAX_SIZE
-    value: '50000'
+    value: '10000'
   - name: ID_DISPATCH_RETRIEVAL_LIMIT_TO_TODAY_ENABLED
     value: 'true'
   - name: ID_VALIDATION_ENABLED
@@ -137,3 +137,5 @@ env: |
     value: "15"
   - name: SPRING_KAFKA_CONSUMER_MAX_POOL_RECORDS
     value: "100"
+  - name: ID_TIMEZONE
+    value: "Africa/Lagos"
