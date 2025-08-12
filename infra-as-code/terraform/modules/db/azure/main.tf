@@ -45,6 +45,10 @@ resource "azurerm_postgresql_flexible_server" "default" {
     update = "1h"
     delete = "1h"
   }
+  
+  lifecycle {
+    ignore_changes = [ zone ]
+  }
 }
 
 resource "azurerm_postgresql_flexible_server_database" "default" {
